@@ -78,3 +78,53 @@ docker rm neiman-tech
 ```
 
 Deletes the container (must be stopped first).RetryClaude does not have the ability to run the code it generates yet.
+
+
+# Check available models
+
+```sh
+curl https://solely-trigger-propose-walking.trycloudflare.com/api/tags
+```
+# Generate text with llama3.2
+
+```sh
+curl https://solely-trigger-propose-walking.trycloudflare.com/api/generate -d '{
+  "model": "llama3.2",
+  "prompt": "Why is the sky blue?",
+  "stream": false
+}'
+```
+# Chat with the model
+
+```sh
+curl https://solely-trigger-propose-walking.trycloudflare.com/api/chat -d '{
+  "model": "llama3.2",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Hello! How are you?"
+    }
+  ],
+  "stream": false
+}'
+```
+# Get model information
+```sh
+curl https://solely-trigger-propose-walking.trycloudflare.com/api/show -d '{
+  "model": "llama3.2"
+}'
+```
+# List running models
+
+```sh
+curl https://solely-trigger-propose-walking.trycloudflare.com/api/ps
+```
+# Streaming response (watch it generate in real-time)
+
+```sh
+curl https://solely-trigger-propose-walking.trycloudflare.com/api/generate -d '{
+  "model": "llama3.2",
+  "prompt": "Tell me a short story",
+  "stream": true
+}'
+```
