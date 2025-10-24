@@ -66,7 +66,10 @@ Displays what's happening inside your container - useful for debugging.
 ```sh
 docker stop neiman-tech
 ```
-
+### Start it again
+```sh
+docker run neiman-tech
+```
 Gracefully stops the running container.
 
 ### Remove the container
