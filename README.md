@@ -21,11 +21,13 @@ bashdocker run -p 11434:11434 --name neiman-tech tech
 ```
 **Let me explain what each part does:**
 
-docker run = start a container
--d = run in background (detached mode)
--p 11434:11434 = expose port 11434 (for Ollama)
---name neiman-tech = give it a name
-  tech = use the image we just built
+---
+docker run: start a container
+-d: run in background (detached mode)
+-p: 11434:11434: expose port 11434 (for Ollama)
+--name neiman-tech: give it a name
+  tech: use the image we just built
+---
 
 
 ### CHECK STATUS
