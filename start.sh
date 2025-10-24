@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Start Ollama in the background
-ollama serve &
+OLLAMA_HOST=0.0.0.0:11434 ollama serve &
 
 # Wait for Ollama to be ready
 echo "Waiting for Ollama to start..."
