@@ -31,7 +31,7 @@ This command creates a Docker image from the Dockerfile in your current director
 
 Start the container with the following command:
 ```bash
-docker run -d -p 11434:11434 --name neiman-tech tech
+docker run -p 11434:11434 --name neiman-tech tech
 ```
 
 ### What each flag does:
