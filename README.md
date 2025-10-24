@@ -8,56 +8,70 @@ pinned: false
 license: mit
 ---
 
-Check out the configuration reference at https://github.com/Neiman-Tech/ollama.git
+# Ollama Docker Setup
+
+This guide will help you build and run Ollama in a Docker container.
+
+**Configuration Reference:** https://github.com/Neiman-Tech/ollama.git
 
 ---
 
-## Build an Image Tag
+## Building the Docker Image
 
-\```sh
+First, build the Docker image and tag it as `tech`:
+```sh
 docker build -t tech .
-\```
+```
 
-## Run the Container
-
-\```bash
-docker run -p 11434:11434 --name neiman-tech tech
-\```
-
-### Command Breakdown
-
-| Command/Flag | Description |
-|---|---|
-| `docker run` | Start a container |
-| `-d` | Run in background (detached mode) |
-| `-p 11434:11434` | Expose port 11434 (for Ollama) |
-| `--name neiman-tech` | Give it a name |
-| `tech` | Use the image we just built |
+This command creates a Docker image from the Dockerfile in your current directory.
 
 ---
 
-## Container Management
+## Running the Container
 
-### Check Running Containers
+Start the container with the following command:
+```bash
+docker run -d -p 11434:11434 --name neiman-tech tech
+```
 
-\```sh
+### What each flag does:
+
+| Flag | Purpose |
+|------|---------|
+| `docker run` | Creates and starts a new container |
+| `-d` | Runs container in detached mode (background) |
+| `-p 11434:11434` | Maps port 11434 from container to host (Ollama's default port) |
+| `--name neiman-tech` | Assigns a friendly name to the container |
+| `tech` | Specifies which image to use |
+
+---
+
+## Managing Your Container
+
+### Check if the container is running
+```sh
 docker ps
-\```
+```
 
-### View Container Logs
+Shows all currently running containers.
 
-\```sh
+### View container logs
+```sh
 docker logs neiman-tech
-\```
+```
 
-### Stop the Container
+Displays what's happening inside your container - useful for debugging.
 
-\```sh
+### Stop the container
+```sh
 docker stop neiman-tech
-\```
+```
 
-### Remove the Container
+Gracefully stops the running container.
 
-\```sh
+### Remove the container
+```sh
 docker rm neiman-tech
-\```
+```
+
+Deletes the container (must be stopped first).RetryClaude does not have the ability to run the code it generates yet.
