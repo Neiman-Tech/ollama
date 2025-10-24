@@ -52,7 +52,7 @@ docker run -p 11434:11434 --name neiman-tech tech
 ```sh
 docker ps
 ```
-### Make Space 
+## Make Space 
 
 ```sh
 docker stop $(docker ps -aq) && docker rm $(docker ps -aq) && docker system prune -a -f --volumes
