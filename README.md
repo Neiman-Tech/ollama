@@ -10,16 +10,21 @@ license: mit
 
 Check out the configuration reference at https://github.com/Neiman-Tech/ollama.git
 
+---
 
-# **BUILD AN IMAGE TAG**
-```sh
+## Build an Image Tag
+
+\```sh
 docker build -t tech .
-```
-## RUN
-```bash
-bashdocker run -p 11434:11434 --name neiman-tech tech
-```
-**Let me explain what each part does:**
+\```
+
+## Run the Container
+
+\```bash
+docker run -p 11434:11434 --name neiman-tech tech
+\```
+
+### Command Breakdown
 
 | Command/Flag | Description |
 |---|---|
@@ -29,27 +34,30 @@ bashdocker run -p 11434:11434 --name neiman-tech tech
 | `--name neiman-tech` | Give it a name |
 | `tech` | Use the image we just built |
 
+---
 
-### CHECK STATUS
+## Container Management
 
-```sh
+### Check Running Containers
+
+\```sh
 docker ps
-```
-##### CHECK WHAT's HAPPENING INSIDE 
-```sh
+\```
+
+### View Container Logs
+
+\```sh
 docker logs neiman-tech
-```
+\```
 
-###### TO STOP THE CONTAINER 
+### Stop the Container
 
-```sh
-docker stop neiman-tech 
+\```sh
+docker stop neiman-tech
+\```
 
-```
+### Remove the Container
 
-###### TO REMOVE THE CONTAINER 
-
-```sh
-docker remove neiman-tech 
-
-```
+\```sh
+docker rm neiman-tech
+\```
