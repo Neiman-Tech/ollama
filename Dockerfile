@@ -35,4 +35,3 @@ EXPOSE 11434 7860
 # Run the startup script
 CMD ["bash", "start.sh"]
 
-# bhcbkbjc  dsbds
